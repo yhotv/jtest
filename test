@@ -1,3 +1,12 @@
-asdasdsadasd
-56454323214
-eqwdeqwdqwd
+job ('triggeredFromGIT'){
+parameters{
+stringParam('Object', 'Module1', 'Description og this param')
+}
+steps{
+shell ('echo $JOB_NAME')
+shell ('echo $Object')
+}
+publishers{
+downstream('Test1', 'SUCCESS')
+}
+}
